@@ -48,7 +48,7 @@
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
-  --bs-light-rgb: 248, 249, 250;
+  --bs-light-rgb: 238, 238, 239;
   --bs-dark-rgb: 33, 37, 41;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
@@ -120,6 +120,12 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 
 h1 .h1 {
   font-size: calc(1.375rem + 1.5vw);
+}
+
+.bg-img {
+  background-image: url(/assets/tandem-coworking-la-laguna-tenerife.jpg);
+  width: 100%;
+  height: auto;
 }
 
 @media (min-width: 1200px) {
@@ -1977,6 +1983,34 @@ progress {
 }
 .form-label {
   margin-bottom: 0.5rem;
+}
+
+.form1 {
+  margin: 0 10rem;
+}
+
+.form1 h1 {
+  font-size: 1.5rem;
+}
+.form1 button {
+  margin: 0 0 2rem 0;
+}
+
+.form-group {
+  margin: .5rem 0;
+}
+
+.form-group label {
+  font-size: .8rem;
+  font-weight: bold;
+}
+
+#btnVolverArriba {
+  display: none; /* Por defecto oculto */
+  position: fixed; /* Fijado en la esquina inferior derecha */
+  bottom: 20px;
+  right: 20px;
+  z-index: 99; /* Por encima de otros elementos */
 }
 
 .col-form-label {

@@ -7,10 +7,12 @@
 // Use this file to add JavaScript to your project
 
 // Obtener referencia al botón y a la ventana modal
+// var modalBtn = document.getElementsByClassName("openModalBtn");
 var modalBtn = document.getElementById('openModalBtn');
 var modal = document.getElementById('modal');
 var submitBtn = document.getElementById('submit');
 var emailInput = document.getElementById('email');
+var inter = document.getElementsByClassName('interes')
 
 // Obtener referencia al elemento de cierre de la ventana modal
 var closeBtn = document.getElementsByClassName('close')[0];
@@ -19,6 +21,12 @@ var closeBtn = document.getElementsByClassName('close')[0];
 modalBtn.onclick = function() {
     modal.style.display = 'block';
 }
+
+// Función para abrir la ventana modal
+inter.onclick = function() {
+    modal.style.display = 'block';
+}
+
 
 // Función para cerrar la ventana modal al hacer clic en el elemento de cierre
 closeBtn.onclick = function() {
@@ -77,4 +85,67 @@ submitBtn.addEventListener('click', function(event) {
 
     // Cerrar la ventana modal después de enviar el formulario
     modal.style.display = 'none';
+});
+
+// Función para volver al principio de la página
+function volverArriba() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Desplazamiento suave
+    });
+}
+
+// Mostrar u ocultar el botón según la posición de desplazamiento
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("btnVolverArriba").style.display = "block";
+} else {
+    document.getElementById("btnVolverArriba").style.display = "none";
+}
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Encuentra el formulario por su ID
+    var formulario = document.getElementById('form1');
+
+    // Agrega un controlador de eventos para el evento 'submit' del formulario
+    formulario.addEventListener('submit', function(event) {
+        // Evita que el formulario se envíe de manera predeterminada
+        event.preventDefault();
+
+        // Envía el formulario
+        enviarFormulario();
+
+        // Borrar formulario
+        borrarFormulario();
+
+        // Mensaje éxito
+        alert("Datos enviados con éxito!");
+    });
+
+    // Función para enviar el formulario
+    function enviarFormulario() {
+        // Obtiene los datos del formulario
+        var nombre = document.getElementById('nombre').value;
+        var email = document.getElementById('form-email').value;
+        var telefono = document.getElementById('telefono').value;
+
+        
+        // Aquí puedes hacer lo que quieras con los datos, como enviarlos a un servidor usando AJAX
+        console.log('Nombre:', nombre);
+        console.log('Email:', email);
+        console.log('Telefono:', telefono);
+        
+    }
+
+    function borrarFormulario() {
+        // Encuentra los elementos de entrada del formulario y establece su valor en una cadena vacía
+        document.getElementById('nombre').value = '';
+        document.getElementById('form-email').value = '';
+        document.getElementById('telefono').value = '';
+        
+    }
+
 });
